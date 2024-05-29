@@ -16,9 +16,25 @@ Por exemplo, se a palavra resultante da primeira parte for “tesla”, as letra
 ser movidas uma posição para a esquerda.  Porém, se a palavra resultante da primeira parte for
 "t#$A", as letras "$A" deverão ser deslocadas.
 
+
+// Resposta 
+https://github.com/CuuKiii/uri-online-judge-BeeCrowd/blob/main/1024.js
+
 */
 
 console.log('Teste')
 var input = 'teste'
-var lines = input.split('\n')
-console.log('Lines: ' + lines)
+var lines = input.split('');
+console.log(lines)
+var prompt = function(texto) {return lines.shift(); } 
+var casos = parseInt(prompt());
+console.log(lines.length)
+var msg, cdg, ecrpt; 
+
+for(let i = 0; i < lines.length; i++) {
+    msg = prompt(); // retorna o primeiro caracter da palavra 
+}
+
+
+
+
