@@ -17,8 +17,6 @@ ser movidas uma posição para a esquerda.  Porém, se a palavra resultante da p
 "t#$A", as letras "$A" deverão ser deslocadas.
 
 
-// Resposta 
-https://github.com/CuuKiii/uri-online-judge-BeeCrowd/blob/main/1024.js
 
 */
 
