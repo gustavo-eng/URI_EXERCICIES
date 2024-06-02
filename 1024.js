@@ -22,18 +22,40 @@ https://github.com/CuuKiii/uri-online-judge-BeeCrowd/blob/main/1024.js
 
 */
 
-console.log('Teste')
-var input = 'teste'
-var lines = input.split('');
-console.log(lines)
-var prompt = function(texto) {return lines.shift(); } 
-var casos = parseInt(prompt());
-console.log(lines.length)
-var msg, cdg, ecrpt; 
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin', 'utf8');
+const lines = input.split('\n');
+const prompt = () => lines.shift();
 
-for(let i = 0; i < lines.length; i++) {
-    msg = prompt(); // retorna o primeiro caracter da palavra 
+const casos = parseInt(prompt());
+for (let i = 0; i < casos; i++) {
+  let msg = prompt();
+  let cdg = [];
+  let ecrpt = "";
+
+  // Primeiro passo: incrementar 3 nas letras maiúsculas e minúsculas
+  for (let char of msg) {
+    let charCode = char.charCodeAt(0);
+    if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
+      charCode += 3;
+    }
+    cdg.push(charCode);
+  }
+
+  // Segundo passo: inverter o array
+  cdg.reverse();
+
+  // Terceiro passo: decrementa 1 dos caracteres da metade em diante
+  for (let j = Math.floor(cdg.length / 2); j < cdg.length; j++) {
+    cdg[j] -= 1;
+  }
+
+  // Construir a mensagem criptografada
+  ecrpt = cdg.map(code => String.fromCharCode(code)).join('');
+
+  console.log(ecrpt);
 }
+
 
 
 
